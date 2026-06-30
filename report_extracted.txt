@@ -1,0 +1,667 @@
+--- PAGE 1 ---
+A
+Project Report On
+“Flight Booking System”
+Submitted To
+SAVITRIBAI PHULE PUNE UNIVERSITY, PUNE
+Towards Partial Fulfillment for the Award of
+Bachelor of Science (Computer Science)
+Submitted By
+Bhusari pavan santosh
+Class:-TY B.Sc.(CS) Semester:-VI
+Under the Supervision of
+Prof. Jagtap S.G.
+Department of BSc(CS)
+Shri Dnyaneshwar Mahavidyalaya Newasa, Pin-414603
+2025-26
+--- PAGE 2 ---
+CERTIFICATE
+This is certifying that "Online complaint management system" embodies the
+original work done by Mr. Bhusari pavan santosh during this project submission
+as a partial fulfilment of the requirement for the System Design Project of Bachelor
+of Science (CS) Semester VI of the Pune University.
+Internal Examiner             External Examiner                   H.O.D.
+--- PAGE 3 ---
+ACKNOWLEDGEMENT
+I am extremely fortunate to have Prof. Jagtap S.G. as my guide. I take pride and pleasure to acknowledge
+the constant, generous, and invaluable help, guidance, and encouragement which he has given me
+throughout this project.
+I am grateful for his scholarly guidance and help. I wish to express my deep sense of gratitude to Principal
+Dr. Ghanwat A.J. of Shri Dnyaneshwar Mahavidyalaya, Newasa, for his continuous cooperation which
+enabled me to complete this work. I am also thankful to the department of B.Sc.(CS) staff of SDM
+College.
+I am also thankful to Prof. Jadhav V.D. and Prof. Bhanage P.A. for giving valuable information and
+cooperation during this project.
+Finally, I thank all my friends and parents who helped me directly or indirectly in the successful
+completion of this project.
+Date:
+Place:
+SIGNATURE OF CANDIDATE
+Mr.bhusari pavan santosh
+--- PAGE 4 ---
+INDEX
+Sr.no Name of content Page no
+1 Abstract 5
+2 Introduction 6-8
+2.1
+2.2
+2.3
+2.4
+Motivation
+Problem Statement
+Purpose, Objective & Goals
+Scope & Limitations
+3 System Specification 9-11
+3.1 Hardware Requirement
+3.2 Software Requirement
+3.3 Key Features of the System
+3.4 Architecture
+4 System Analysis 12-14
+4.1
+4.2
+4.3
+4.4
+4.5
+4.6
+Existing System
+Limitations of system
+Proposed System
+4.3.1 Key Features
+4.3.2 Advantages
+Feasibility Study
+Fact finding techniques
+System Study
+5 System Design 15-22
+5.1
+5.2
+5.3
+5.4
+Diagram Flow
+5.1.1 DFD Digrams
+5.1.2 Entity-Relationship Diagram
+Database Model
+User Interface
+Admin Module
+6 Outputs And Report Testing 23-32
+ 6.1
+Report Testing
+6.1.1 System Testing
+6.1.2 White Box Testing
+7 Conclusion 33
+8 Future Scope 34
+9 Bibliography 35
+--- PAGE 5 ---
+Abstract
+The Complaint Management System is a dynamic and user-friendly web application designed to
+provide users with a convenient platform to register, track, and manage complaints efficiently.
+The system aims to simplify the complaint handling process by offering an interactive interface,
+secure user authentication, and effective complaint tracking and management features.
+The frontend of the website is developed using HTML, CSS, and JavaScript along with
+Bootstrap, which ensures an attractive layout, responsive design, and smooth user interactions.
+HTML is used to structure the web pages, CSS is applied for styling and visual appeal, and
+JavaScript enables dynamic features such as form validation, real-time updates, and interactive
+user experience.
+The backend is developed using Python and the Django framework, which handles server-side
+logic, user authentication, complaint submission workflows, status updates, and communication
+between the frontend and database. SQLite is used as the database to store user details, complaint
+records, status information, and other related data securely.
+The website includes key features such as user registration and login, complaint submission,
+complaint status tracking (Pending, In Progress, Resolved), and an admin module for managing
+and resolving complaints. This project demonstrates the integration of frontend and backend
+technologies to build a secure, scalable, and efficient complaint handling system.
+--- PAGE 6 ---
+INTRODUCTION
+In today's modern world, technology plays a very important role in every field, including
+education, organizations, and service sectors. Traditional complaint handling methods that rely
+on manual processes such as written applications or verbal communication are now being
+replaced by digital platforms to improve efficiency and accessibility.
+Managing complaints manually — from recording issues to tracking their status and resolving
+them — requires a significant amount of time and effort. It may also lead to errors, delays, and
+lack of proper communication between users and administrators. A Complaint Management
+System helps to simplify this process by making it faster, more organized, and efficient.
+The main idea behind the Complaint Management System is to computerize complaint handling
+operations such as user registration, complaint submission, status tracking, and resolution
+management. It replaces traditional manual methods with an online platform where all complaint
+records are stored securely in a database and can be accessed anytime.
+This system allows users to register online, submit their complaints, and track the status of their
+issues such as Pending, In Progress, or Resolved. The admin can view all complaints, update
+their status, and manage the system effectively. This improves transparency, reduces workload,
+and ensures that complaints are handled in a timely and efficient manner.
+2.1 Motivation
+In many organizations and institutions, complaint handling is still done manually through written
+applications, phone calls, or verbal communication. This leads to several problems such as loss
+of data, delays in processing, lack of proper tracking, and inefficient communication between
+users and administrators.
+ Users often face difficulty in knowing the status of their complaints, as there is no proper system
+to track progress. They have to repeatedly visit offices or contact staff for updates, which is time-
+consuming and inconvenient. Manual systems also increase the chances of complaints being
+ignored or not resolved on time.
+With the increasing use of digital technology, people now expect fast, transparent, and easily
+accessible services. An online Complaint Management System provides a centralized platform
+where users can submit complaints from anywhere and track their status in real time.
+The need for a structured and automated system that can manage complaints efficiently, reduce
+manual workload, and improve transparency was the main motivation behind developing this
+system.
+•
+2.2 Problem Statement
+• In many organizations and institutions, a large number of complaints are generated daily.
+Managing these complaints manually through paper records or basic systems is time-
+consuming, inefficient, and prone to errors. Important complaint data can be lost,
+misplaced, or not recorded properly, leading to poor service and dissatisfaction among
+users.
+Many existing systems do not provide proper tracking and status updates for complaints. As a
+result, users are unable to know whether their complaint is being processed or resolved. This lack
+of transparency creates confusion and reduces trust in the system.
+--- PAGE 7 ---
+The main problem is the lack of automation and integration in the complaint handling process.
+When complaints are managed manually, it increases the chances of delays, miscommunication,
+and unresolved issues. Therefore, there is a strong need for a centralized, web-based system that
+allows users to submit complaints, track their status, and enables administrators to manage and
+resolve them efficiently in a single integrated platform.
+•
+2.3 Purpose, Objectives & Goals
+Purpose
+The purpose of developing this Complaint Management System is to make complaint handling
+easier and more efficient for users and administrators. It provides a single platform for submitting
+complaints, tracking their status, and managing their resolution.
+The system aims to reduce manual work, save time, and improve the accuracy of complaint
+records while ensuring transparency in the complaint handling process. It allows users to register,
+submit complaints, and monitor their progress, while administrators can manage and resolve
+complaints effectively.
+Overall, the system provides a fast, reliable, and user-friendly solution for handling complaints in
+a modern and organized way.
+Objectives
+1)To develop an easy-to-use online platform for submitting and managing complaints.
+2)To allow users to register, log in, and access the system from any device.
+3)To enable users to submit complaints with proper details in a structured format.
+4)To provide a complaint tracking system with status updates such as Pending, In Progress, and
+Resolved.
+5)To allow the admin to view, manage, and resolve complaints efficiently.
+6)To store all user and complaint information securely in a database using Django ORM.
+7)To reduce manual errors and improve efficiency through an automated complaint handling
+system.
+Goals
+-To make the complaint handling process fully digital and user-friendly.
+-To reduce the workload of administrators through automation of complaint management.
+-To provide quick and easy access to complaint status information at any time.
+-To improve user satisfaction by offering a fast, transparent, and reliable complaint resolution
+system.
+-To create a secure and well-organized platform using modern web technologies.
+2.4 Scope and Limitations
+Scope
+The Complaint Management System is designed to handle a wide range of complaint-related
+operations including:
+User Registration & Login – Users can create accounts and securely log in to access the
+system.
+--- PAGE 8 ---
+Complaint Submission – Users can submit complaints by providing necessary details such as
+title, description, and category.
+Complaint Tracking – Users can track the status of their complaints (Pending, In Progress,
+Resolved).
+Admin Management – Admin can view all complaints, update their status, and manage the
+system effectively.
+Complaint Management – Users can view their submitted complaints and check updates
+anytime.
+Status Update System – Admin can change complaint status to ensure proper workflow and
+resolution.
+Data Storage – All user and complaint data is stored securely in the database.
+User-Friendly Interface – The system provides a simple and responsive interface for easy
+interaction.
+Limitations
+The system requires Python, Django, and a local or hosted server connection to operate.
+The system does not include advanced features such as real-time notifications (SMS/Email) in
+the current version.
+It does not support image or file upload with complaints in the current version.
+The system depends on manual admin actions to update complaint status.
+Regular technical maintenance is required to manage and update system data.
+--- PAGE 9 ---
+3. System Specification
+3.1 Hardware Requirements
+The Complaint Management System is a web-based application that does not require high-end
+hardware. However, to ensure smooth performance, the following minimum hardware
+requirements should be met:
+Minimum Requirements:
+Processor: Intel Core i3 or equivalent
+RAM: 4 GB
+Hard Disk: 20 GB free space
+Monitor: Standard display (1366 × 768 resolution or higher)
+Input Devices: Keyboard and Mouse
+Internet Connection: Minimum broadband connection
+3.2 Software Requirements (Complaint Management System)
+The software requirements include both server-side and client-side components that help in the
+development, hosting, and operation of the Complaint Management System.
+Server-Side Software
+Operating System: Windows 10/11 / Linux Ubuntu / macOS
+Backend Language: Python 3.8 or higher
+Web Framework: Django
+Database: SQLite3 (built-in, no installation required)
+Development Server: Django built-in runserver
+Client-Side Software
+Web Browser: Google Chrome, Mozilla Firefox, or Microsoft Edge (latest versions)
+Frontend Languages: HTML5, CSS3, JavaScript (Vanilla ES6+)
+CSS Framework: Bootstrap
+Fonts: Standard web fonts / Google Fonts
+Development Tools
+IDE / Editor: Visual Studio Code
+Package Manager: pip (Python)
+Version Control: Git & GitHub
+•
+Category Software / Tool Version / Notes
+--- PAGE 10 ---
+Backend Language Python Version 3.8+
+Web Framework flask Version 3.1.2
+Database SQLite3 Built-in, zero config
+Frontend HTML5, CSS3, JavaScript Vanilla JS ES6+
+CSS Framework Bootstrap Version 4.4.1
+Fonts Sora + DM Sans Via Google Fonts CDN
+PDF Generation xhtml2pdf + reportlab Version 0.2.5
+Code Editor VS Code Version 1.80+
+Version Control Git & GitHub Git 2.x
+Deployment Gunicorn Heroku / PythonAnywhere
+3.3 Key Features of the System
+3.3 Key Features of the System (Complaint Management System)
+The Complaint Management System includes several important features that help users and
+administrators manage complaints efficiently:
+1. User Registration & Login
+Users can create an account and log in securely.
+Authentication ensures that only authorized users can access the system.
+2. Complaint Submission
+Users can submit complaints by entering details such as title and description.
+Complaints are stored securely in the database.
+3. Complaint Tracking
+Users can track the status of their complaints.
+Status types include: Pending, In Progress, Resolved.
+4. Admin Panel
+Admin can view all complaints submitted by users.
+Admin can update complaint status and manage records.
+5. Complaint Management
+Users can view all their submitted complaints.
+Admin can manage, update, and resolve complaints efficiently.
+6. Database Management
+All data such as user details and complaints are stored securely.
+Data is managed using Django ORM.
+7. User-Friendly Interface
+Simple and easy-to-use interface for both users and admin.
+Helps users interact with the system without technical knowledge.
+8. Responsive Design
+--- PAGE 11 ---
+Works on desktops, tablets, and mobile devices.
+Ensures smooth user expe   rience on all screen sizes.
+3.4 System Architecture (Complaint Management System)
+The Complaint Management System follows a three-tier web architecture, which separates the
+system into a presentation layer, a business logic layer, and a data layer.
+1. Presentation Layer (Frontend)
+This is the frontend part of the system that users interact with directly. It includes web pages
+designed using HTML5, CSS3, Bootstrap, and JavaScript. Users use this layer to register, log in,
+submit complaints, and track their complaint status. The interface is designed to be simple,
+responsive, and user-friendly.
+2. Application Layer (Backend — Django/Python)
+Also known as the business logic layer. It handles all processing such as user authentication,
+complaint submission, status updates, and communication between the frontend and database.
+Python with the Django framework manages request handling, URL routing, and application
+logic efficiently.
+3. Database Layer (SQLite3)
+This is the backend storage where all data is stored securely. Information such as user details,
+complaint records, and complaint status is stored in an SQLite database. The application layer
+interacts with the database using Django ORM to perform operations like storing, retrieving, and
+updating data.
+--- PAGE 12 ---
+4 System Analysis
+Existing System
+In the existing system, complaint handling is usually done manually through written applications,
+phone calls, or direct communication with staff. There is no proper centralized system to record
+and manage complaints efficiently.
+Users are required to visit offices physically or contact authorities multiple times to register and
+follow up on complaints. This process is time-consuming and often leads to delays and
+miscommunication. There is no proper mechanism to track complaint status or ensure timely
+resolution.
+  4.2 Limitations of the Existing System
+Time-Consuming Process: Manual handling of complaints takes a lot of time.
+High Possibility of Errors: Complaints may be lost, misplaced, or incorrectly recorded.
+No Proper Tracking: Users cannot track the status of their complaints.
+Lack of Transparency: Users are not informed about complaint progress.
+No Centralized System: Data is not stored in a single organized system.
+Poor User Experience: Manual methods are inconvenient and inefficient.
+  4.3 Proposed System
+The proposed Complaint Management System is a web-based platform designed to replace
+manual complaint handling methods. It provides an automated and centralized system for
+managing complaints efficiently.
+The system allows users to register, submit complaints, and track their status. All complaint data
+is stored securely in a database. The admin can view, manage, and update complaint status,
+ensuring proper handling and timely resolution.
+  4.3.1 Key Features
+User registration and login system
+Complaint submission with details
+Complaint status tracking (Pending, In Progress, Resolved)
+Admin panel for managing complaints
+Secure data storage using database
+Simple and user-friendly interface
+  4.3.2 Advantages
+Accuracy: Reduces manual errors in complaint handling
+Time-Saving: Faster complaint submission and processing
+Data Security: Information stored securely in database
+Better User Experience: Easy and convenient system
+Transparency: Users can track complaint status anytime
+Reduced Paperwork: Digital system replaces manual records
+  4.4 Feasibility Study
+A feasibility study was conducted to determine whether the system is practical and can be
+implemented successfully.
+1. Technical Feasibility
+--- PAGE 13 ---
+The technologies used such as Python, Django, HTML, CSS, JavaScript, Bootstrap, and SQLite
+are freely available and widely used. The system can run on standard computers without special
+hardware.
+2. Economic Feasibility
+The development cost is low because all tools and technologies are open-source. The system
+reduces costs related to manual complaint handling.
+3. Operational Feasibility
+The system is easy to use and does not require special training. Users can easily submit and track
+complaints.
+4. Time Feasibility
+The project can be completed within the academic timeline using simple and structured
+development steps.
+  4.5 Fact-Finding Techniques
+To gather requirements, the following techniques were used:
+Observation: Studying how complaints are handled manually in organizations
+Interviews: Discussing with users about their problems in complaint systems
+Questionnaires: Collecting feedback about user expectations
+Online Research: Understanding existing complaint systems and features
+  4.6 System Study
+The system study focuses on understanding how complaint handling works and how it can be
+improved using a digital system. The complete workflow—from user registration to complaint
+submission, status tracking, and resolution—was analyzed and implemented.
+The data model is designed to store user details and complaint records efficiently. Relationships
+between users and complaints are maintained using database tables. The system ensures proper
+data management, easy access, and smooth operation.
+5 system design
+5.1 Diagram Flow
+5.1.1 Data Flow Diagram (DFD)
+The Data Flow Diagram illustrates how data moves through the complaint system between the user, the
+System, and the Database.
+--- PAGE 14 ---
+First Level of Data Flow Diagram for System Login
+
+--- PAGE 15 ---
+Second Level of Data Flow Diagram for General Inquiry System
+Third Level DATA FLOW DIAGRAM  OF BOOKING SECTION
+
+--- PAGE 16 ---
+5.1.2 Entity-Relationship Diagram (ERD)
+The Entity-Relationship Diagram shows the database entities, their attributes, and the relationships
+between them in the complaint management system
+
+--- PAGE 17 ---
+5.1.3 Use Case Diagram
+Database Model (Complaint Management System)
+The database model for the Online Complaint Management System is based on a relational
+schema designed in SQLite3 using Django ORM. The following tables form the core database
+structure:
+  Tables / Models
+Table / Model Primary Key Important Fields
+user_user id (auto) username, email, password
+(hashed), role
+(user/admin/staff), mobile
+complaint_complaint id (auto) user_id (FK), title, description,
+category, status (pending/in-
+progress/resolved),
+created_date, resolved_date
+complaint_category id (auto) category_name, description
+complaint_staff id (auto) name, email, role, department
+complaint_assignment id (auto) complaint_id (FK), staff_id
+(FK), assigned_date
+complaint_evidence id (auto) complaint_id (FK),
+file_upload, upload_date
+complaint_feedback id (auto) complaint_id (FK), user_id
+(FK), feedback_text, rating
+--- PAGE 18 ---
+Table / Model Primary Key Important Fields
+complaint_solution id (auto) complaint_id (FK),
+solution_text, resolution_date
+5.3 User Interface Design (Complaint Management System)
+The user interface of the Online Complaint Management System is designed to provide a
+simple, user-friendly, and professional experience. The design focuses on easy navigation, clear
+visibility of complaint status, and smooth interaction for users, staff, and administrators. A
+consistent design system using CSS variables, typography, and responsive layouts ensures
+uniformity across all pages.
+  Color Palette
+The primary colors used are deep blue (#1E3A8A) and teal (#14B8A6), creating a clean and
+trustworthy interface.
+Blue is used for headers, navigation bar, and important buttons
+Teal is used for highlights, active states, and progress indicators
+Background uses light grey (#F9FAFB) for better readability
+Error messages are shown in red (#EF4444)
+Success messages are shown in green (#22C55E)
+This color combination helps users easily identify actions like complaint status (pending,
+resolved, etc.).
+  Typography
+Two fonts are used to maintain clarity and readability:
+Sora → used for headings, buttons, and important labels
+DM Sans → used for body text, forms, and complaint details
+This combination creates a clear visual hierarchy and improves user experience.
+Key Pages
+• The Online Complaint Management System consists of several important user interface
+pages designed for smooth interaction. The Home Page provides an overview of the system
+with options to register a complaint or track its status. The Complaint Registration Page
+allows users to submit complaints with details such as title, description, category, and
+supporting evidence. The Complaint Status Page displays all submitted complaints along
+with their current status like pending, in progress, or resolved. A detailed Complaint View
+Page provides complete information about a specific complaint, including updates and
+assigned staff. The Admin/Staff Dashboard enables management of complaints, assignment
+of tasks, and status updates. Additionally, the Login and Registration pages offer secure
+access to the system with a clean and user-friendly interface.
+5.4 Admin Modul
+The Admin Module is a crucial part of the Online Complaint Management System that allows the
+administrator to manage and control the entire system efficiently. It provides a secure interface
+where only authorized admin users can access and perform operations such as managing
+complaints, users, categories, and staff assignments. The admin can monitor complaint status,
+assign tasks to staff, and ensure timely resolution of issues. The admin panel is implemented
+--- PAGE 19 ---
+using Django Admin, which provides a powerful built-in interface for easy database
+management.
+5.4.5.4.5.4.1. Admin Authentication
+ Admin users must log in using secure credentials (username & password)
+ Only users with is_staff = True can access the admin panel
+ URL to access admin panel:
+http://127.0.0.1:8000/admin/
+5.4.2. Admin Functionalities
+2.1 User Management
+Admin can:
+ View all registered users
+ Add new users manually
+ Edit user details (name, email, password)
+5.4.5.4.5.4.3. Admin Database Control
+The admin interacts with the following tables:
+ User
+ complaint
+ resolve
+ reject
+ delete
+All operations are handled using flask , ensuring:
+ Data consistency
+ Security
+ Easy CRUD operations
+--- PAGE 20 ---
+6. Outputs and Report Testing
+ Outputs:
+User complaint Registration Page/Homepage:
+Complaint submitted
+Admin login
+--- PAGE 21 ---
+Otp authntication
+Admin dashboard
+--- PAGE 22 ---
+ Report Testing:
+6.1 Testing
+Testing is a very important part of software development. After the design and implementation
+stages are completed, testing ensures that the system works correctly, fulfills user requirements,
+and is free from major errors or defects.
+In the Online Complaint Management System, testing was performed to verify that all modules—
+such as user registration, complaint submission, complaint tracking, staff assignment, status
+updates, and feedback handling—are functioning properly and providing accurate results.
+6.1.1 System Testing
+System Testing is the process of testing the complete integrated system to ensure that it meets all
+specified requirements. This testing was carried out after all modules of the system were fully
+developed and integrated.
+Objectives of System Testing
+To ensure that the system meets all functional and performance requirements
+To verify smooth data flow between frontend, backend, and database
+To check proper working of complaint registration, tracking, and management features
+To detect any interface issues or missing functionalities
+To confirm that complaint status updates and assignments work correctly
+Test Case Expected Result Actual Result Status
+--- PAGE 23 ---
+Complaint upload Complaitn submit Complaint submit Pass
+Complaint submit Complaint submit Complaint submit Pass
+User Registration User account is
+created
+User registered
+successfuly Pass
+User login User logs in with
+valid credentials Login successful Pass
+Invalid login Error message
+displayed
+Error message
+shown Pass
+Complaint status view Complaint status
+displayed correctly
+Status displayed
+correctly Pass
+Complaint
+update(admin)
+Complaint status is
+updated
+Status updated
+successfully Pass
+Assign complaint to
+staff
+Complaint assigened
+to staff
+Assigenment
+sucessful Pass
+File upload File uploads without
+error
+File uploaded
+successfully Pass
+Feedback submission Feedback is recorded
+Feedback
+submitted
+successfully
+Pass
+Log out Admin logs out
+successfully Admin logs out Pass
+Data retrieval Complaint data
+fetched correctly
+Data displayed
+correctly Pass
+From validation Error shown for
+empty fields
+Validation
+working correctly Pass
+System performance
+System responds
+within acceptable
+time
+Response time
+acceptable Pass
+After thorough system testing, all modules of the Online Complaint Management System worked
+as expected. The data entered by users was stored correctly in the SQLite database, complaints
+were submitted and recorded accurately, status updates and staff assignments functioned
+properly, and the system handled complaint tracking and feedback without any errors.
+6.1.2 White Box Testing
+--- PAGE 24 ---
+White Box Testing (also known as Glass Box Testing) is a method of testing the internal
+structure and logic of the code. In this approach, the tester examines the program’s internal
+working and writes test cases to verify each part of the logic.
+Objectives of White Box Testing
+To verify that the code logic in all Django view functions related to complaint submission,
+tracking, and management works correctly in all scenarios
+To ensure that all conditions and loops used in complaint handling, status updates, and staff
+assignment function properly
+To identify any hidden logical or syntax errors in the Django backend code
+Techniques Used
+Statement Coverage: Every line of code related to complaint submission, status updates, user
+authentication (login, register), complaint assignment, and feedback handling was executed at
+least once during testing.
+Branch Coverage: All conditional statements were tested, including different complaint statuses
+(Pending, In Progress, Resolved), successful and failed login attempts, valid and invalid form
+inputs, and admin vs user access flows.
+Path Coverage: All possible execution paths through the system were tested thoroughly,
+including the complete complaint lifecycle from submission to resolution, the complaint tracking
+process, and feedback submission by users.
+After performing white box testing, all internal modules of the system—including database ORM
+operations, Django view logic, user authentication, complaint submission, status updates, staff
+assignment, and feedback handling—worked correctly. No major syntax or logical errors were
+found. The Online Complaint Management System successfully passed all white box tests,
+confirming that the internal structure of the code is accurate, efficient, and reliable.
+.
+--- PAGE 25 ---
+7. CONCLUSION
+The Online Complaint Management System is a complete web-based solution designed to
+simplify the process of registering, tracking, and resolving complaints efficiently. The system
+successfully automates major functions such as complaint submission, status tracking, staff
+assignment, and feedback collection, providing users with a fast, reliable, and transparent
+platform.
+Through this project, the issues present in traditional complaint handling methods—such as
+manual record keeping, delayed responses, lack of transparency, and inefficient
+communication—have been effectively addressed. The system offers a centralized platform
+where users can easily register complaints and monitor their progress until resolution.
+The Python and Django backend provides a secure and scalable foundation for the application,
+while the SQLite database ensures reliable data storage. Django’s ORM enables efficient
+database operations and maintainability. The frontend design focuses on simplicity,
+responsiveness, and user-friendliness, ensuring a smooth experience across different devices.
+The system supports multiple functionalities including complaint categorization, staff
+assignment, status updates (Pending, In Progress, Resolved), and user feedback, making it a
+comprehensive solution for complaint management. Its modular design also allows easy future
+enhancements and scalability.
+In conclusion, the Online Complaint Management System improves efficiency, transparency, and
+user satisfaction in handling complaints. It demonstrates how modern web technologies can
+streamline and optimize traditional processes, making them faster, more organized, and more
+effective.
+8 Future scope
+Although the current version of the Online Complaint Management System fulfills all basic
+requirements effectively, there is still scope for further improvement and enhancement. The
+system can be extended with advanced features to make it more efficient and user-friendly.
+The system can be upgraded by integrating real-time notification services such as SMS and email
+alerts to inform users about complaint status updates. A mobile application for Android and iOS
+can be developed to allow users to register and track complaints more conveniently. Artificial
+Intelligence can be incorporated to automatically categorize complaints and prioritize them based
+on urgency.
+Additionally, a live chat or chatbot feature can be added to provide instant support to users. The
+system can also include role-based dashboards with advanced analytics and reporting for
+administrators to monitor performance and resolution rates. Integration with cloud platforms like
+AWS or Google Cloud can improve scalability and accessibility.
+In future, features like multilingual support, document verification, and a rating system for
+service quality can further enhance user satisfaction. Overall, the system has strong potential to
+evolve into a more intelligent, scalable, and user-centric complaint management solution.
+--- PAGE 26 ---
+9. BIBLIOGRAPHY
+• The bibliography lists the references, websites, and resources used while developing this
+project. These materials helped in understanding concepts of web development, database
+design, Python programming, and complaint management system design.
+1. Books and Study Materials
+Fundamentals of Database Systems by Elmasri & Navathe
+Web Technologies: HTML, CSS, JavaScript by Uttam K. Roy
+Software Engineering: A Practitioner's Approach by Roger S. Pressman
+Python Programming: An Introduction to Computer Science by John Zelle
+Django for Beginners by William S. Vincent
+Two Scoops of Django by Audrey Roy Greenfeld & Daniel Roy Greenfeld
+2. Websites and Online References
+www.w3schools.com — for HTML, CSS, and JavaScript tutorials
+www.djangoproject.com — for Django official documentation
+www.python.org — for Python official documentation
+www.geeksforgeeks.org — for programming and database concepts
+www.stackoverflow.com — for debugging and community support
+www.getbootstrap.com — for responsive design and UI components
+www.fonts.google.com — for typography and font usage
+3. Tools Used
+Visual Studio Code — for coding and debugging
+SQLite3 — database used for data storage
+Git & GitHub — for version control and project management
+Bootstrap — for responsive UI design
+Google Fonts — for typography
+xhtml2pdf and reportlab — for PDF generation (reports if used)
+•
+4. Project Guidance
+• Guidance from Prof. Jagtap S.G. and faculty members of Department of B.Sc.(CS).
+• Online project documentation resources related to complaint management and flask web
+development.
